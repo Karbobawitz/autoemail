@@ -1,0 +1,1 @@
+This is the README for autoemail.sh (and its subsidiary code).
