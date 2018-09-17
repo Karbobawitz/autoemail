@@ -48,7 +48,7 @@ with open('/Users/alkarbo/autoemail/FOHsignup.csv', 'rb') as f: #open the csv fi
         showinfo = [] #make a list to store show info
         if nextweek == str(data[1][i]): #if the date of a show is next week
             a = i #store which column we are on
-            for j in range(ncols): #try a maximum number fo times equal to the number of columns
+            for j in range(ncols): #try a maximum number of times equal to the number of columns
                 if str(data[0][a]) == "": #if there is no show title
                     a = a-1 #look at the column to the left of this one and try again
                 else: #if there is a show name
