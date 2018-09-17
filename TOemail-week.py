@@ -73,7 +73,7 @@ with open('/Users/alkarbo/autoemail/TOemail.sh', 'a+') as f: #open a file to wri
         for j in range(len(allinfo[i])-4): #for each student signed up
             f.write("{0}, ".format(allinfo[i][j+4])) #add their email address as a recipient
         f.write("alkarbo@davidson.edu") #then add the manager
-        f.write(" < /Users/alkarbo/autoemail/TOemail{0}.txt\n".format(i)) #specifiy the text fo the email as a file 
+        f.write(" < /Users/alkarbo/autoemail/TOemail{0}.txt\n".format(i)) #specifiy the text of the email as a file 
         f.write("echo 'TO Emails Sent\n'")
         f.write("rm /Users/alkarbo/autoemail/TOemail{0}.txt".format(i)) #make the bash script delete the txt files
 
