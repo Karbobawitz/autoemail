@@ -84,6 +84,7 @@ with open('/Users/alkarbo/autoemail/TOemail.sh', 'a+') as f: #open a file to wri
             e.write("\nThe show is tomorrow so if you can't attend you are expected to already be in the process of finding someone to cover.\n") #more email message
             e.write("\nThis is an automated message, please do not reply.\n") #more message
             e.write("\nSincerely,\n\nKarbo's Robot\n") #more message
-        
+            e.close()
+
 print "\nTO Email Script Written\n"
 print "\n------------------------------------\n"

@@ -1,10 +1,10 @@
-#File: FOHemail.py
+#File: FOHemail-week.py
 
 #Name: Alexander Karbo (Karbo)
 
 #Date: 7/27/18
 
-#Desc: This is FOHemail.py, a script written to parse the .csv files generated
+#Desc: This is FOHemail-week.py, a script written to parse the .csv files generated
 #by autoemail.sh and return the values needed for mailsmp to send the emails. 
 #You will need to customize this document with the emails of your workstudy 
 #students. See README.txt for full instructions or is all else fails contact 
@@ -32,7 +32,7 @@ emails.append("sogonzalezleal@davidson.edu")
 import csv #this helps parse the csv file
 import datetime #this gets today's date and does date arithmetic
 
-nextweek = datetime.date.today() + datetime.timedelta(days=7) #tomorrow is one day after today
+nextweek = datetime.date.today() + datetime.timedelta(days=7) #next week is 7 days after today
 nextweek = "{:%-m/%-d/%Y}".format(nextweek) #change the format to match the csv file
 
 print "\nCode initialized on %s\n" % datetime.date.today()
