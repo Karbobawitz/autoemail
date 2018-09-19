@@ -15,8 +15,8 @@ that from being too difficult.
 This is the README for autoemail.sh (and its subsidiary code). If you're
 reading this then you have found the code, which is good. This Readme should
 be in a folder named "autoemail" along with four peices of code: autoemail.sh,
-FOHemail.py, TOemail-week.py and TOemail-day.py. autoemail.sh is the primary
-bash script which in turn runs the two python codes (which in turn write and 
+FOHemail-week.py, FOHemail-day.py, TOemail-week.py and TOemail-day.py. autoemail.sh is the 
+primary bash script which in turn runs the four python codes (which in turn write and 
 run more bash script). For the code to work you need to do three things: 
 create the correct file structure, update the code for you and your employees, 
 and setup the code to run automatically. The following sections will discuss 
