@@ -75,7 +75,7 @@ with open('/Users/alkarbo/autoemail/TOemail.sh', 'a+') as f: #open a file to wri
         f.write("alkarbo@davidson.edu") #then add the manager
         f.write(" < /Users/alkarbo/autoemail/TOemail{0}.txt\n".format(i)) #specifiy the text of the email as a file 
         f.write("echo 'TO Emails Sent'\n")
-        f.write("rm /Users/alkarbo/autoemail/TOemail{0}.txt".format(i)) #make the bash script delete the txt files
+        f.write("rm /Users/alkarbo/autoemail/TOemail{0}.txt\n".format(i)) #make the bash script delete the txt files
 
         with open('/Users/alkarbo/autoemail/TOemail{0}.txt'.format(i), "w+") as e: #make a file to be the text of the email
             e.write("\nYou have the show {0} at {1} in {2}. You should be set up one hour before showtime.\n".format(allinfo[i][0], allinfo[i][2], allinfo[i][3])) #add show info

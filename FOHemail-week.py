@@ -76,7 +76,7 @@ with open('/Users/alkarbo/autoemail/FOHemail.sh', 'a+') as f: #open a file to wr
         f.write("alkarbo@davidson.edu") #then add the manager
         f.write(" < /Users/alkarbo/autoemail/FOHemail{0}.txt\n".format(i)) #specify the content of the email to be a text file
         f.write("echo 'FOH Emails Sent'\n")
-        f.write("rm /Users/alkarbo/autoemail/FOHemail{0}.txt".format(i)) #make the bash code delete the txt files
+        f.write("rm /Users/alkarbo/autoemail/FOHemail{0}.txt\n".format(i)) #make the bash code delete the txt files
 
         with open('/Users/alkarbo/autoemail/FOHemail{0}.txt'.format(i), "w+") as e: #create a text file for the body of the email
             e.write("\nYou have the show {0} at {1}. The call time is {2}.\n".format(allinfo[i][0], allinfo[i][3], allinfo[i][2])) #put int he show info

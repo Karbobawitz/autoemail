@@ -70,7 +70,7 @@ print allinfo
 
 with open('/Users/alkarbo/autoemail/FOHemail.sh', 'a+') as f: #open a file to write some bash code
     for i in range(len(allinfo)): #for each show
-        f.write("mail -s 'You Have a Show Tomorrow! (On %s)' " % allinfo[i][1]) #begin the mail command and specify the subject
+        f.write("\nmail -s 'You Have a Show Tomorrow! (On %s)' " % allinfo[i][1]) #begin the mail command and specify the subject
         for j in range(len(allinfo[i])-4): #for each email
             f.write("{0}, ".format(allinfo[i][j+4])) #add them as a recipient
         f.write("alkarbo@davidson.edu") #then add the manager
