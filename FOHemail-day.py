@@ -35,8 +35,6 @@ import datetime #this gets today's date and does date arithmetic
 tomorrow = datetime.date.today() + datetime.timedelta(days=1) #tomorrow is one day after today
 tomorrow = "{:%-m/%-d/%Y}".format(tomorrow) #change the format to match the csv file
 
-print "\nCode initialized on %s\n" % datetime.date.today()
-
 print "\nChecking For FOH Shows On %s\n" % tomorrow
 
 with open('/Users/alkarbo/autoemail/FOHsignup.csv', 'rb') as f: #open the csv file
