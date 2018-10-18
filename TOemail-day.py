@@ -28,6 +28,7 @@ emails.append("hahill@davidson.edu")
 emails.append("jelee@davidson.edu")
 emails.append("jifarrell@davidson.edu")
 emails.append("jostory@davidson.edu")
+emails.append("lupereira@davidson.edu")
 emails.append("mehenry@davidson.edu")
 emails.append("nynelson@davidson.edu")
 
