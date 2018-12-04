@@ -33,7 +33,7 @@ emails.append("nynelson@davidson.edu")
 import csv #used to parse the csv files
 import datetime #used to get the current date and do date arithmetic
 
-nextweek = datetime.date.today() + datetime.timedelta(days=7) #tomorrow is one day ahead of today
+nextweek = datetime.date.today() + datetime.timedelta(days=7) #next week is seven days ahead of today
 nextweek = "{:%-m/%-d/%Y}".format(nextweek) #change the format to match that of the csv file
 print "\nChecking For TO Shows On %s\n" % nextweek
 
@@ -48,7 +48,7 @@ with open('/Users/alkarbo/autoemail/TOsignup.csv', 'rb') as f: #open csv file
             a = i #store which column we are on
             for j in range(ncols): #try every column
                 if str(data[0][a]) == "": #if the show name is blank
-                    a = a-1 #move one column left (and then try again)
+                    a = a-1 #move one column left (so we can try again)
                 else: #if the show name is not blank
                     showinfo.append(str(data[0][a])) #store the show name
                     break #stop searching for show name
@@ -57,7 +57,7 @@ with open('/Users/alkarbo/autoemail/TOsignup.csv', 'rb') as f: #open csv file
             allinfo.append(showinfo) #add this show's info the the general list of info
 print "TO Show Info Saved. Shows Found: %s\n" % [i[0] for i in allinfo]
 
-for i in range(len(allinfo)): #for each show
+for i in range(len(allinfo)): #for each show next week
     for j in range(len(emails)): #for each student
         if allinfo[i][j+6] != "": #if there is anything written in the box in that student's row
             allinfo[i][j+6] = emails[j] #store their email address from the emails list in this file
@@ -67,14 +67,14 @@ print "TO Email Info Tabulated:\n"
 print allinfo
 
 with open('/Users/alkarbo/autoemail/TOemail.sh', 'a+') as f: #open a file to write some custom bash code
-    for i in range(len(allinfo)): #for each show
+    for i in range(len(allinfo)): #for each show next week
         f.write("mail -s 'You have a show next week! (On %s)' " % allinfo[i][1]) #begin the mail command and specifiy the subject of the email
         for j in range(len(allinfo[i])-5): #for each student signed up
             f.write("{0}, ".format(allinfo[i][j+5])) #add their email address as a recipient
         f.write("alkarbo@davidson.edu") #then add the manager
         f.write(" < /Users/alkarbo/autoemail/TOemail{0}.txt\n".format(i)) #specifiy the text of the email as a file 
         f.write("echo 'TO Emails Sent'\n")
-        f.write("rm /Users/alkarbo/autoemail/TOemail{0}.txt\n".format(i)) #make the bash script delete the txt files
+        f.write("rm /Users/alkarbo/autoemail/TOemail{0}.txt\n".format(i)) #make the bash script delete the .txt files
 
         with open('/Users/alkarbo/autoemail/TOemail{0}.txt'.format(i), "w+") as e: #make a file to be the text of the email
             e.write("\nYou have the show {0} at {1} in {2}. The call time is {3}.\n".format(allinfo[i][0], allinfo[i][2], allinfo[i][4], allinfo[i][3])) #add show info
