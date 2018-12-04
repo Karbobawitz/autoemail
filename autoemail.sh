@@ -17,8 +17,8 @@
 
 #--------------------------------------------------
 
-/usr/local/bin/wget -q -O /Users/alkarbo/autoemail/FOHsignup.csv 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRli1gZ_o1-oiurONRWY0D1nhlEA7pVHlTX5KfXctii2-vKus9yiFNcmKSsHEiVsMylqvBNTYDgUyOj/pub?gid=0&single=true&output=csv' #download FOH signup and save as FOHsignup.csv
-/usr/local/bin/wget -q -O /Users/alkarbo/autoemail/TOsignup.csv 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRAR6jqTmx2ybHnaOwbtOZYILsBQjScK8u8BFQMB-i-KGOTbNh8yvFSB98309ltkZ1dNDwdmHvADgnN/pub?gid=0&single=true&output=csv' #dowload TO signup and save as TOsignup.csv
+/usr/local/bin/wget -q -O /Users/alkarbo/autoemail/FOHsignup.csv 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRli1gZ_o1-oiurONRWY0D1nhlEA7pVHlTX5KfXctii2-vKus9yiFNcmKSsHEiVsMylqvBNTYDgUyOj/pub?gid=512661185&single=true&output=csv' #download FOH signup and save as FOHsignup.csv
+/usr/local/bin/wget -q -O /Users/alkarbo/autoemail/TOsignup.csv 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRAR6jqTmx2ybHnaOwbtOZYILsBQjScK8u8BFQMB-i-KGOTbNh8yvFSB98309ltkZ1dNDwdmHvADgnN/pub?gid=468288563&single=true&output=csv' #dowload TO signup and save as TOsignup.csv
 echo "\nSchedules Downloaded"
 python /Users/alkarbo/autoemail/FOHemail-week.py #run the FOH code
 python /Users/alkarbo/autoemail/FOHemail-day.py #run secondary FOH code to provide a reminder the day before as well
