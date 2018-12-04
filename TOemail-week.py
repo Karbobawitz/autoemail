@@ -20,12 +20,10 @@
 emails = []
 emails.append("bedavis@davidson.edu")
 emails.append("chdebeus@davidson.edu")
-emails.append("cdbrooks@davidson.edu")
-emails.append("coferraro@davidson.edu")
 emails.append("hahill@davidson.edu")
-emails.append("jelee@davidson.edu")
-emails.append("jifarrell@davidson.edu")
+emails.append("jareilly@davidson.edu")
 emails.append("jostory@davidson.edu")
+emails.append("kaalexis@davidson.edu")
 emails.append("lupereira@davidson.edu")
 emails.append("mehenry@davidson.edu")
 emails.append("nynelson@davidson.edu")
@@ -61,25 +59,25 @@ print "TO Show Info Saved. Shows Found: %s\n" % [i[0] for i in allinfo]
 
 for i in range(len(allinfo)): #for each show
     for j in range(len(emails)): #for each student
-        if allinfo[i][j+5] != "": #if there is anything written in the box in that student's row
-            allinfo[i][j+5] = emails[j] #store their email address from the emails list in this file
+        if allinfo[i][j+6] != "": #if there is anything written in the box in that student's row
+            allinfo[i][j+6] = emails[j] #store their email address from the emails list in this file
     allinfo[i] = filter(None, allinfo[i]) #filter out the students who are not signed up
-    allinfo[i].remove(str(allinfo[i][4])) #remove the "number needed" value
+    allinfo[i].remove(str(allinfo[i][5])) #remove the "number needed" value
 print "TO Email Info Tabulated:\n"
 print allinfo
 
 with open('/Users/alkarbo/autoemail/TOemail.sh', 'a+') as f: #open a file to write some custom bash code
     for i in range(len(allinfo)): #for each show
         f.write("mail -s 'You have a show next week! (On %s)' " % allinfo[i][1]) #begin the mail command and specifiy the subject of the email
-        for j in range(len(allinfo[i])-4): #for each student signed up
-            f.write("{0}, ".format(allinfo[i][j+4])) #add their email address as a recipient
+        for j in range(len(allinfo[i])-5): #for each student signed up
+            f.write("{0}, ".format(allinfo[i][j+5])) #add their email address as a recipient
         f.write("alkarbo@davidson.edu") #then add the manager
         f.write(" < /Users/alkarbo/autoemail/TOemail{0}.txt\n".format(i)) #specifiy the text of the email as a file 
         f.write("echo 'TO Emails Sent'\n")
         f.write("rm /Users/alkarbo/autoemail/TOemail{0}.txt\n".format(i)) #make the bash script delete the txt files
 
         with open('/Users/alkarbo/autoemail/TOemail{0}.txt'.format(i), "w+") as e: #make a file to be the text of the email
-            e.write("\nYou have the show {0} at {1} in {2}. You should be set up one hour before showtime.\n".format(allinfo[i][0], allinfo[i][2], allinfo[i][3])) #add show info
+            e.write("\nYou have the show {0} at {1} in {2}. The call time is {3}.\n".format(allinfo[i][0], allinfo[i][2], allinfo[i][4], allinfo[i][3])) #add show info
             e.write("\nIf you cannot attend this show you must find someone to cover for you and let Karbo know asap.\n") #more email message
             e.write("\nThis is an automated message, please do not reply.\n") #more message
             e.write("\nSincerely,\n\nKarbo's Robot\n") #more message

@@ -22,15 +22,14 @@
 emails = []
 emails.append("bedavis@davidson.edu")
 emails.append("chdebeus@davidson.edu")
-emails.append("cdbrooks@davidson.edu")
-emails.append("coferraro@davidson.edu")
 emails.append("hahill@davidson.edu")
-emails.append("jelee@davidson.edu")
-emails.append("jifarrell@davidson.edu")
+emails.append("jareilly@davidson.edu")
 emails.append("jostory@davidson.edu")
+emails.append("kaalexis@davidson.edu")
 emails.append("lupereira@davidson.edu")
 emails.append("mehenry@davidson.edu")
 emails.append("nynelson@davidson.edu")
+emails.append("olswanson@davidson.edu")
 
 #---------------------------------------
 
@@ -56,17 +55,17 @@ with open('/Users/alkarbo/autoemail/TOsignup.csv', 'rb') as f: #open csv file
                 else: #if the show name is not blank
                     showinfo.append(str(data[0][a])) #store the show name
                     break #stop searching for show name
-            for j in range(4 + len(emails)): #go through the four rows of info plus the email rows
+            for j in range(5 + len(emails)): #go through the four rows of info plus the email rows
                 showinfo.append(str(data[j+1][i])) #store the info
             allinfo.append(showinfo) #add this show's info the the general list of info
 print "TO Show Info Saved. Shows Found: %s\n" % [i[0] for i in allinfo]
 
 for i in range(len(allinfo)): #for each show
     for j in range(len(emails)): #for each student
-        if allinfo[i][j+5] != "": #if there is anything written in the box in that student's row
-            allinfo[i][j+5] = emails[j] #store their email address from the emails list in this file
+        if allinfo[i][j+6] != "": #if there is anything written in the box in that student's row
+            allinfo[i][j+6] = emails[j] #store their email address from the emails list in this file
     allinfo[i] = filter(None, allinfo[i]) #filter out the students who are not signed up
-    allinfo[i].remove(str(allinfo[i][4])) #remove the "number needed" value
+    allinfo[i].remove(str(allinfo[i][5])) #remove the "number needed" value
 print "TO Email Info Tabulated:\n"
 print allinfo
 
@@ -81,7 +80,7 @@ with open('/Users/alkarbo/autoemail/TOemail.sh', 'a+') as f: #open a file to wri
         f.write("rm /Users/alkarbo/autoemail/TOemail{0}_2.txt\n".format(i)) #make the bash script delete the txt files
 
         with open('/Users/alkarbo/autoemail/TOemail{0}_2.txt'.format(i), "w+") as e: #make a file to be the text of the email
-            e.write("\nYou have the show {0} at {1} in {2}. You should be set up one hour before showtime.\n".format(allinfo[i][0], allinfo[i][2], allinfo[i][3])) #add show info
+            e.write("\nYou have the show {0} at {1} in {2}. The call time is {3}.\n".format(allinfo[i][0], allinfo[i][2], allinfo[i][4], allinfo[i][3])) #add show info
             e.write("\nThe show is tomorrow so if you can't attend you are expected to already be in the process of finding someone to cover.\n") #more email message
             e.write("\nThis is an automated message, please do not reply.\n") #more message
             e.write("\nSincerely,\n\nKarbo's Robot\n") #more message
