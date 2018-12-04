@@ -145,32 +145,33 @@ etc.	      |        |	|	 |
 
      2c) CORRECTING PATHING
 
-     This one is also pretty straight forward! As previously mentioned, the
-     pathing in this code is absolute. Basically, whenever the code references
-     a file it looks for it in your home folder. My username is "alkarbo" so
-     for me this path looks like:
+     As previously mentioned, the pathing in this code is absolute. Basically, 
+     whenever the code references a file it looks for it in your home folder. 
+     My username is "alkarbo" so for me this path looks like:
 
      /Users/alkarbo/autoemail/
 
      What you need to do is go through all of the code and change this to
      work with your username. Any time you see the above /Users/... syntax you
-     need to change the second field to your username.
+     need to change the second field to your username. So, the above would become:
+
+     /Users/*yourusername*/autoemail/
 
      There are 10 uses of this syntax in automeial.sh and 5 uses in each of the
      python files (the same 5 uses because the python files all have the same
      format). You must change all of them, but if you miss one the code should
-     produce an error saying that the error does not exist and telling you
+     produce an error saying that the file does not exist and telling you
      where the incorrect pathing is.  
 
 3. CRONJOB
 
 The code is now fully configured to run correctly! You could manually run it
-every day but i'd reccomend just setting up a cronjob to do it. From Terminal 
+every day but i'd recommend just setting up a cronjob to do it. From Terminal 
 first use this command:
 
 crontab -e
 
-Then press fn + I
+Then press fn + i
 
 Then paste in the following line:
 
@@ -188,7 +189,7 @@ That's it! What you just did is tell your system to run a cronjob at 9:00am
 every day. The cronjob will run autoemail.sh and record the output of the code
 to a log file in the autoemail folder.
 
-Ok that should be everything! If the code isn't running make sure your computer
+Ok, that should be everything! If the code isn't running make sure your computer
 isn't asleep or off (because then crontab won't be running). There is a lot of 
 online support for the different aspects of this code, but if you need
 assistence specific to this program you can reach out to Karbo at 
