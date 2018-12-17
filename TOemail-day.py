@@ -30,6 +30,7 @@ emails.append("lupereira@davidson.edu")
 emails.append("mehenry@davidson.edu")
 emails.append("nynelson@davidson.edu")
 emails.append("olswanson@davidson.edu")
+emails.append("zaidris@davidson.edu")
 
 #---------------------------------------
 
