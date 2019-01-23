@@ -21,7 +21,6 @@ emails = []
 emails.append("bedavis@davidson.edu")
 emails.append("chdebeus@davidson.edu")
 emails.append("hahill@davidson.edu")
-emails.append("jareilly@davidson.edu")
 emails.append("jostory@davidson.edu")
 emails.append("kaalexis@davidson.edu")
 emails.append("lupereira@davidson.edu")
