@@ -54,7 +54,7 @@ with open('/Users/alkarbo/autoemail/TOsignup.csv', 'rb') as f: #open csv file
                 else: #if the show name is not blank
                     showinfo.append(str(data[0][a])) #store the show name
                     break #stop searching for show name
-            for j in range(5 + len(emails)): #go through the four rows of info plus the email rows
+            for j in range(4 + len(emails)): #go through the four rows of info plus the email rows
                 showinfo.append(str(data[j+1][i])) #store the info
             allinfo.append(showinfo) #add this show's info the the general list of info
 print "TO Show Info Saved. Shows Found: %s\n" % [i[0] for i in allinfo]

@@ -73,8 +73,8 @@ print allinfo
 with open('/Users/alkarbo/autoemail/TOemail.sh', 'a+') as f: #open a file to write some custom bash code
     for i in range(len(allinfo)): #for each show
         f.write("mail -s 'You have a show Tomorrow! (On %s)' " % allinfo[i][1]) #begin the mail command and specifiy the subject of the email
-        for j in range(len(allinfo[i])-4): #for each student signed up
-            f.write("{0}, ".format(allinfo[i][j+4])) #add their email address as a recipient
+        for j in range(len(allinfo[i])-5): #for each student signed up
+            f.write("{0}, ".format(allinfo[i][j+5])) #add their email address as a recipient
         f.write("alkarbo@davidson.edu") #then add the manager
         f.write(" < /Users/alkarbo/autoemail/TOemail{0}_2.txt\n".format(i)) #specifiy the text of the email as a file 
         f.write("echo 'TO Emails Sent'\n")

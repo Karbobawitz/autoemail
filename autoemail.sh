@@ -29,4 +29,4 @@ sh /Users/alkarbo/autoemail/TOemail.sh #run the bash script written by TOemail-w
 rm /Users/alkarbo/autoemail/FOHemail.sh #clean FOH email bash code
 rm /Users/alkarbo/autoemail/TOemail.sh #clean TO email bash code
 rm /Users/alkarbo/autoemail/*.csv #clean downloaded sheets
-echo "Files Cleaned\n"
+echo "Files Cleaned"
