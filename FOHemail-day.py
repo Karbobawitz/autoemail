@@ -18,10 +18,9 @@
 #ENTER EMAILS HERE in the same order as they appear on the signupsheet
 
 emails = []
-emails.append("anadragna@davidson.edu")
 emails.append("caconnor@davidson.edu")
-emails.append("camargerum@davidson.edu")
 emails.append("dusnider@davidson.edu")
+emails.append("emwilson@davidson.edu")
 emails.append("macomimorog@davidson.edu")
 emails.append("oloyedepo@davidson.edu")
 
