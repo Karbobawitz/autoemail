@@ -22,10 +22,10 @@ emails.append("bedavis@davidson.edu")
 emails.append("chdebeus@davidson.edu")
 emails.append("hahill@davidson.edu")
 emails.append("jostory@davidson.edu")
-emails.append("kaalexis@davidson.edu")
 emails.append("lupereira@davidson.edu")
+emails.append("mapapakostas@davidson.edu")
 emails.append("mehenry@davidson.edu")
-emails.append("mirummage@Davidson.edu")
+#emails.append("mirummage@Davidson.edu")
 emails.append("nynelson@davidson.edu")
 emails.append("olswanson@davidson.edu")
 emails.append("zaidris@davidson.edu")
@@ -79,7 +79,7 @@ with open('/Users/alkarbo/autoemail/TOemail.sh', 'a+') as f: #open a file to wri
         f.write("rm /Users/alkarbo/autoemail/TOemail{0}.txt\n".format(i)) #make the bash script delete the .txt files
 
         with open('/Users/alkarbo/autoemail/TOemail{0}.txt'.format(i), "w+") as e: #make a file to be the text of the email
-            e.write("\nYou have the show {0} at {1} in {2}. The call time is {3}.\n".format(allinfo[i][0], allinfo[i][2], allinfo[i][4], allinfo[i][3])) #add show info
+            e.write("\nYou have the show {0} at {1} in {2}. The call time is {3}.\n".format(allinfo[i][0], allinfo[i][3], allinfo[i][4], allinfo[i][2])) #add show info
             e.write("\nIf you cannot attend this show you must find someone to cover for you and let Karbo know asap.\n") #more email message
             e.write("\nThis is an automated message, please do not reply.\n") #more message
             e.write("\nSincerely,\n\nKarbo's Robot\n") #more message
