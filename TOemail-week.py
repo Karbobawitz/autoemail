@@ -20,14 +20,14 @@
 emails = []
 emails.append("bedavis@davidson.edu")
 emails.append("chdebeus@davidson.edu")
-emails.append("hahill@davidson.edu")
 emails.append("jostory@davidson.edu")
+emails.append("lekhasawneh@davidson.edu")
 emails.append("lupereira@davidson.edu")
 emails.append("mapapakostas@davidson.edu")
 emails.append("mehenry@davidson.edu")
-#emails.append("mirummage@Davidson.edu")
+emails.append("mirummage@Davidson.edu")
 emails.append("nynelson@davidson.edu")
-emails.append("olswanson@davidson.edu")
+emails.append("sogonzalezleal@davidson.edu")
 emails.append("zaidris@davidson.edu")
 
 #---------------------------------------
